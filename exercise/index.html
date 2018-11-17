@@ -84,12 +84,12 @@
     var product = products.find((product) => product.id === id);
     console.log(id);
     if (totalCoin < product.price) {
-      return alert('your coin is not enouge');
+      return alert('Your coin is not enouge');
     }
 
     totalCoin -= parseInt(product.price);
     totalCoinElement.val(totalCoin);
-    return alert('your can get ' + product.name);
+    return alert('Your can get ' + product.name);
   }
 
   function refundCoin () {
@@ -97,6 +97,8 @@
     totalCoin = 0;
     totalCoinElement.val(totalCoin);
     balanceElement.val(balance);
+
+    return alert('Your can get refund' +'  '+ balance + ' ' + 'Bath');
   }
 
   function addProduct (obj) {
