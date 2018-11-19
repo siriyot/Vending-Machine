@@ -15,9 +15,10 @@
 
   <div class="row">
     <div class="col-sm-8" style="background-color:lavender;">
-      <div><br>
+      <div>
+        <h3>Please put money</h3>
         Amount : 
-        <input type="text" id="total-coin" disabled> Bath
+        <input type="text" id="total-coin" disabled> Bath 
 
           <input class="btn btn-default" type="button" name="doit" value="Refund" onclick="refundCoin()">
 
@@ -37,17 +38,16 @@
       <div>
         <br>
         <br>
+        <h3>__________________________</h3>
         Balance :
-        <input type="text" id="balance" value="0" disabled>
-          
-        
+        <input type="text" id="balance" value="0" disabled>    
         Bath
 
       </div>
       <br>
     </div>  
     <div id="product-container" class="col-sm-4" style="background-color:lavenderblush;">
-      
+      <h3>Select Product</h3>
     </div>
   </div>
 </div>
@@ -55,6 +55,12 @@
 <script type="text/javascript">
   var products = [];
   var productContainer = $('#product-container');
+  var totalCoinElement = $('#total-coin');
+  var totalCoin = 0;
+  var balanceElement = $('#balance');
+  var balance = 0;
+  totalCoinElement.val(totalCoin);
+  balanceElement.val(balance);
 
   $.ajax({
     url: 'https://www.mocky.io/v2/5af11f8c3100004d0096c7ed',
@@ -67,13 +73,6 @@
     },
     error: function() { alert('Failed!'); }
   });
-
-  var totalCoinElement = $('#total-coin');
-  var totalCoin = 0;
-  var balanceElement = $('#balance');
-  var balance = 0;
-  totalCoinElement.val(totalCoin);
-  balanceElement.val(balance);
  
   function insertCoin (coin) {
     totalCoin += coin;
